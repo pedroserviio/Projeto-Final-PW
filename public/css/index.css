@@ -1,0 +1,70 @@
+body {
+    overflow-x: hidden;
+}
+.navbar {
+    background-color: black;
+    color: white;
+}
+#toggleMenu {
+    padding: 5px 5px;
+}
+.right-side-menu > a {
+    margin: 0 5px;
+}
+.sidebar {
+    width: 50px;
+    background-color: #212529;
+    color: white;
+    transition: width 0.3s;
+    height: 100vh;
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centraliza os ícones quando colapsado */
+}
+.sidebar.open-state {
+    width: 150px;
+    align-items: flex-start; /* Alinha à esquerda quando aberto */
+}
+.sidebar ul {
+    padding: 0;
+    width: 100%; /* Garante que os itens preencham a largura completa da barra lateral */
+}
+.sidebar li {
+    list-style: none;
+    width: 100%; /* Garante que os itens preencham a largura completa da barra lateral */
+}
+.sidebar a {
+    color: white;
+    text-decoration: none;
+    text-align: left; /* Alinha o texto à esquerda */
+    cursor: pointer;
+    display: flex;
+    align-items: center; /* Alinha ícone e texto verticalmente */
+    padding: 0 20px; /* Adiciona espaçamento interno */
+    width: 100%; /* Garante que os itens preencham a largura completa da barra lateral */
+    justify-content: center; /* Centraliza os ícones quando colapsado */
+}
+.sidebar.open-state a {
+    justify-content: flex-start; /* Alinha ícone e texto à esquerda quando aberto */
+}
+.sidebar a:hover {
+    color: grey;
+}
+.menu-text {
+    display: none;
+    margin-left: 10px;
+}
+.sidebar.open-state .menu-text {
+    display: inline;
+}
+.content {
+    margin-left: 80px;
+    transition: margin-left 0.3s;
+}
+.content .container {
+    padding: 20px;
+}
+.open-state ~ .content {
+    margin-left: 250px;
+}
