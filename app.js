@@ -4,8 +4,9 @@ const path = require('path');
 const database = require('./config/db');
 require('dotenv').config()
 
-const indexRoutes = require('./routes/index');
-const productRoutes = require('./routes/products');
+const indexRoutes = require('./routes/indexRoutes');
+const loginRoutes = require('./routes/loginRoutes');
+const productRoutes = require('./routes/produtoRoutes');
 
 function initMiddleware() {
     app.use(express.static(path.join(__dirname, 'public')));
@@ -13,7 +14,8 @@ function initMiddleware() {
 }
 
 function routes() {
-    app.use('/', indexRoutes); 
+    app.use('/', indexRoutes);
+    app.use('/', loginRoutes);
     // app.use('/products', productRoutes); 
 }
 

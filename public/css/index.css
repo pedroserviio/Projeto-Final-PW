@@ -1,70 +1,140 @@
 body {
-    overflow-x: hidden;
+	overflow-x: hidden;
 }
 .navbar {
-    background-color: black;
-    color: white;
+	background-color: black;
+	color: white;
 }
 #toggleMenu {
-    padding: 5px 5px;
+	padding: 5px 5px;
 }
 .right-side-menu > a {
-    margin: 0 5px;
+	margin: 0 5px;
+	color: white;
+}
+.right-side-menu > a:hover {
+	color: gray;
 }
 .sidebar {
-    width: 50px;
-    background-color: #212529;
-    color: white;
-    transition: width 0.3s;
-    height: 100vh;
-    position: fixed;
-    display: flex;
-    flex-direction: column;
-    align-items: center; /* Centraliza os ícones quando colapsado */
+	width: 50px;
+	background-color: #212529;
+	color: white;
+	transition: width 0.3s;
+	height: 100vh;
+	position: fixed;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
 }
 .sidebar.open-state {
-    width: 150px;
-    align-items: flex-start; /* Alinha à esquerda quando aberto */
+	width: 150px;
+	align-items: flex-start;
 }
 .sidebar ul {
-    padding: 0;
-    width: 100%; /* Garante que os itens preencham a largura completa da barra lateral */
+	padding: 0;
+	width: 100%;
 }
 .sidebar li {
-    list-style: none;
-    width: 100%; /* Garante que os itens preencham a largura completa da barra lateral */
+	list-style: none;
+	width: 100%;
 }
 .sidebar a {
-    color: white;
-    text-decoration: none;
-    text-align: left; /* Alinha o texto à esquerda */
-    cursor: pointer;
-    display: flex;
-    align-items: center; /* Alinha ícone e texto verticalmente */
-    padding: 0 20px; /* Adiciona espaçamento interno */
-    width: 100%; /* Garante que os itens preencham a largura completa da barra lateral */
-    justify-content: center; /* Centraliza os ícones quando colapsado */
+	color: white;
+	text-decoration: none;
+	text-align: left;
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+	padding: 0 20px;
+	width: 100%;
+	justify-content: center;
 }
 .sidebar.open-state a {
-    justify-content: flex-start; /* Alinha ícone e texto à esquerda quando aberto */
+	justify-content: flex-start;
 }
 .sidebar a:hover {
-    color: grey;
+	color: grey;
 }
 .menu-text {
-    display: none;
-    margin-left: 10px;
+	display: none;
+	margin-left: 10px;
 }
 .sidebar.open-state .menu-text {
-    display: inline;
+	display: inline;
+}
+.content.move-right {
+    margin-left: 150px;
 }
 .content {
-    margin-left: 80px;
-    transition: margin-left 0.3s;
+	margin-left: 80px;
+	transition: margin-left 0.3s;
 }
 .content .container {
-    padding: 20px;
+	padding: 20px;
 }
-.open-state ~ .content {
-    margin-left: 250px;
+/* .open-state ~ .content {
+	margin-left: 250px;
+} */
+.carousel,
+.cards-products {
+	width: 100%;
+	padding: 20px;
+}
+.carousel-inner {
+	border: 1px solid black;
+}
+.carousel-item > img {
+	height: 500px;
+}
+.card {
+	margin: 0 20px;
+}
+.cards-products {
+    display: flex;
+    justify-content: space-between;
+}
+footer {
+    border-top: 1px solid black;
+    padding-top: 70px;
+    margin-top: 100px;
+    background-color: #fcfcfc;
+    height: 170px;
+}
+.footer {
+    display: flex;
+    justify-content: space-between;
+}
+.logo > img {
+    height: 40px;
+    width: 40px;
+    border-radius: 20px;
+}
+.social-icon {
+    font-size: 30px;
+    margin-right: 22px;
+    color: #333;
+}
+.fa-instagram:hover{
+    color: #E1306C;
+}
+.fa-whatsapp:hover {
+    color: rgb(0, 180, 0);
+}
+.fab {
+    transition: 0.5s;
+}
+.fab:hover {
+    font-size: 35px;
+}
+.fa-envelope {
+    transition: 0.5s;
+}
+.fa-envelope:hover {
+    font-size: 35px;
+    color: #feb500;
+}
+.copyright{
+    max-width: 1200px;
+    font-size: 10px;
+    color: grey;
 }

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Cadastro de Produto</title>
+		<link rel="stylesheet" href="../css/cadastro_produto.css"/>
+	</head>
+	<body>
+        <div class="container">
+            <div class="row">
+                <div class="offset-4 col-4">
+                    <form action="/cadastrar_produto" method="post">
+                        <a href="/">Voltar</a>
+                        <h3>Cadastrar Produto</h3>
+
+                        <label for="nome">Produto:</label>
+                        <input type="text" placeholder=" Nome" id="nome">
+
+                        <label for="preco">Preço:</label>
+                        <input type="text" placeholder=" 99.99" id="preco">
+                
+                        <label for="senha">Descrição:</label>
+                        <textarea name="senha" id="senha"></textarea>
+                
+                        <button>Cadastrar</button>
+                    </form>
+                </div>
+            </div>
+        </div> 
+	</body>
+</html>

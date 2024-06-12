@@ -1,0 +1,40 @@
+body {
+    background-color: #212529;
+}
+.container {
+    margin-top: 70px;
+    padding: 50px;
+    background-color: black;
+    border-radius: 10px;
+    border: 1px solid grey;
+}
+.container > h3{
+    font-size: 32px;
+    font-weight: 500;
+    line-height: 42px;
+    text-align: center;
+    color: white;
+    padding-bottom: 20px;
+}
+table, th, td {
+    border: 1px solid white;
+    border-collapse: collapse;
+    color: white;
+    background-color: black;
+}
+th, td {
+    padding: 15px!important;
+}
+th {
+    background-color: black!important;
+}
+.container-link {
+    text-align: center;
+}
+.container-link > a {
+    color: white;
+    text-decoration: none;
+}
+.container-link > a:hover {
+    text-decoration: underline;
+}
