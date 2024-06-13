@@ -10,18 +10,18 @@
         <div class="container">
             <div class="row">
                 <div class="offset-4 col-4">
-                    <form action="/cadastrar_usuario" method="post">
+                    <form action="/usuario/cadastrar_usuario" method="post">
                         <a href="/">Voltar</a>
                         <h3>Sign up</h3>
 
                         <label for="nome">Nome:</label>
-                        <input type="text" placeholder=" Nome" id="nome">
+                        <input type="text" placeholder=" Nome" id="nome" name="nome" required>
 
                         <label for="email">E-mail:</label>
-                        <input type="text" placeholder=" Email" id="email">
+                        <input type="text" placeholder=" Email" id="email" name="email" required>
                 
                         <label for="senha">Senha:</label>
-                        <input type="password" placeholder=" Senha" id="senha">
+                        <input type="password" placeholder=" Senha" id="senha" name="senha" required>
                 
                         <button>Sign Up</button>
                         <span style="margin-top: 20px; text-align: center;">Já possui uma conta?
