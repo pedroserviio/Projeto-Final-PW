@@ -10,7 +10,7 @@
         <div class="container">
             <div class="row">
                 <div class="offset-4 col-4">
-                    <form action="/usuario/cadastrar_usuario" method="post">
+                    <form action="/usuario/cadastrar_usuario" method="POST" id="cadastroForm">
                         <a href="/">Voltar</a>
                         <h3>Sign up</h3>
 
@@ -23,13 +23,13 @@
                         <label for="senha">Senha:</label>
                         <input type="password" placeholder=" Senha" id="senha" name="senha" required>
                 
-                        <button>Sign Up</button>
+                        <button type="submit">Sign Up</button>
                         <span style="margin-top: 20px; text-align: center;">Já possui uma conta?
                             <a href="/login">Entrar</a>
                         </span>
                     </form>
                 </div>
             </div>
-        </div> 
+        </div>
 	</body>
 </html>
