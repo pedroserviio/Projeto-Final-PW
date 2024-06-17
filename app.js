@@ -1,5 +1,6 @@
 const express = require('express');
 const session = require('express-session')
+const mustacheExpress = require('mustache-express')
 const app = express();
 const path = require('path');
 const database = require('./config/db');
@@ -11,7 +12,10 @@ const productRoutes = require('./src/routes/produtoRoutes');
 const usuarioRoutes = require('./src/routes/usuarioRoutes');
 
 function initMiddleware() {
-    app.use(express.static(path.join(__dirname , 'src', 'views')));
+    app.engine('html', mustacheExpress());
+    app.set('view engine', 'html');
+    app.set('views', path.join(__dirname, 'src', 'views', 'html'));
+    app.use(express.static(path.join(__dirname, 'src', 'views'))); 
     app.use(express.urlencoded({ extended: true }));
     app.use(express.json());
     app.use(session(
@@ -19,7 +23,8 @@ function initMiddleware() {
             secret: 'secret-token',
             name: 'sessionId',  
             resave: false,
-            saveUninitialized: false
+            saveUninitialized: true,
+            cookie: { secure: false }
         }
     ));
 }

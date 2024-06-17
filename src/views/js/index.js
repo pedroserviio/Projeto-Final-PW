@@ -14,3 +14,10 @@ document.getElementById("toggleMenu").addEventListener("click", function () {
         content.classList.remove('move-right');
 	}
 });
+
+let successMessage = document.getElementById('success-message');
+if (successMessage) {
+	setTimeout(() => {			
+		successMessage.style.display = 'none';
+	}, 3000);
+}

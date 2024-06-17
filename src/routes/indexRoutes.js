@@ -1,10 +1,12 @@
 const express = require('express');
-const path = require('path');
 const router = express.Router();
 
-// Rota principal (página inicial)
 router.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, '../views/html/index.html'))
+    const successMessage = req.session.successMessage || '';
+    req.session.successMessage = ''; // Limpa a mensagem depois de exibi-la
+    const autorizado = req.session.autorizado || false;
+
+    res.render('index', { successMessage, autorizado });
 });
 
 module.exports = router;
