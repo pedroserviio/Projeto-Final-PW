@@ -5,11 +5,12 @@ async function cadastrarProduto(req, res) {
         const produto = new Produto({
             nome: req.body.nome,
             preco: req.body.preco,
-            descricao: req.body.descricao
+            descricao: req.body.descricao,
+            url: req.body.url
         });
 
         await produto.save();
-        res.status(200).redirect('/listar');
+        res.status(200).redirect('/lista_de_produtos');
     } catch (error) {
         console.log('Erro: ', error);
         res.status(500).send({ error: 'Erro ao cadastrar produto' });
@@ -41,7 +42,8 @@ async function editarProduto(req, res) {
         await Produto.findByIdAndUpdate(req.params.id, {
             nome: req.body.nome,
             preco: req.body.preco,
-            descricao: req.body.descricao
+            descricao: req.body.descricao,
+            url: req.body.url 
         });
         res.status(200).send({ message: 'Produto atualizado com sucesso' });
     } catch (error) {

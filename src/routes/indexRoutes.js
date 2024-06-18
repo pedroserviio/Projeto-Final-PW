@@ -3,7 +3,7 @@ const router = express.Router();
 
 router.get('/', (req, res) => {
     const successMessage = req.session.successMessage || '';
-    req.session.successMessage = ''; // Limpa a mensagem depois de exibi-la
+    req.session.successMessage = '';
     const autorizado = req.session.autorizado || false;
 
     res.render('index', { successMessage, autorizado });

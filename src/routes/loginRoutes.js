@@ -4,7 +4,7 @@ const router = express.Router();
 
 const usuarioController = require('../controllers/usuarioController');
 
-router.get('/cadastrar_usuario', (req, res) => {
+router.get('/cadastro_de_usuario', (req, res) => {
     res.sendFile(path.join(__dirname, '../views/html/cadastro_usuario.html'))
 });
 
