@@ -8,7 +8,7 @@ require('dotenv').config()
 
 const indexRoutes = require('./src/routes/indexRoutes');
 const loginRoutes = require('./src/routes/loginRoutes');
-const productRoutes = require('./src/routes/produtoRoutes');
+const produtoRoutes = require('./src/routes/produtoRoutes');
 const usuarioRoutes = require('./src/routes/usuarioRoutes');
 
 function initMiddleware() {
@@ -32,7 +32,7 @@ function initMiddleware() {
 function routes() {
     app.use('/', indexRoutes);
     app.use('/', loginRoutes);
-    app.use('/', productRoutes); 
+    app.use('/', produtoRoutes); 
     app.use('/usuario', usuarioRoutes);
 }
 

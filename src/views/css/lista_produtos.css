@@ -20,13 +20,21 @@ table, th, td {
     border: 1px solid white;
     border-collapse: collapse;
     color: white;
-    background-color: black;
 }
 th, td {
     padding: 15px!important;
 }
 th {
     background-color: black!important;
+}
+td {
+    background-color: #27214f!important;
+}
+td:first-of-type {
+    width: 165px;
+}
+button {
+    margin-right: 10px;
 }
 .container-link {
     text-align: center;
