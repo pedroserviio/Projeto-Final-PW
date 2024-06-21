@@ -10,6 +10,8 @@ const indexRoutes = require('./src/routes/indexRoutes');
 const loginRoutes = require('./src/routes/loginRoutes');
 const produtoRoutes = require('./src/routes/produtoRoutes');
 const usuarioRoutes = require('./src/routes/usuarioRoutes');
+const carrinhoRoutes = require('./src/routes/carrinhoRoutes');
+const pedidoRoutes = require('./src/routes/pedidoRoutes');
 
 function initMiddleware() {
     app.engine('html', mustacheExpress());
@@ -34,6 +36,8 @@ function routes() {
     app.use('/', loginRoutes);
     app.use('/', produtoRoutes); 
     app.use('/usuario', usuarioRoutes);
+    app.use('/carrinho', carrinhoRoutes);
+    app.use('/pedidos', pedidoRoutes);
 }
 
 initMiddleware();

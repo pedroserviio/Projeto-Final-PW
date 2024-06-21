@@ -1,0 +1,51 @@
+.container {
+    padding-top: 30px;
+    display: flex;
+}
+.cart {
+    width: 60%;
+}
+.cart table {
+    width: 90%;
+    border-collapse: collapse;
+}
+.cart table, 
+.cart th, 
+.cart td {
+    border-bottom: 1px solid rgb(192, 192, 192);
+    padding: 10px;
+}
+.cart th:nth-child(n+2), .cart td:nth-child(n+2) {
+    text-align: center;
+}
+#carrinho {
+    margin-top: 20px;
+}
+.resumo {
+    width: 40%;
+    max-height: 520px;
+    background-color: lightgrey;
+    border: 1px solid black;
+    border-radius: 10px;
+}
+.total {
+    padding: 10px;
+    height: 100%;
+    position: relative;
+}
+#total-pedido {
+    table-layout: fixed;
+}
+#label-valor-total,
+#valor-total {
+    font-size: large;
+}
+#valor-total {
+    font-weight: bold;
+}
+.buttons-container > button {
+    position: absolute;
+    left: 10px;
+    right: 10px;
+    bottom: 12px;
+} 

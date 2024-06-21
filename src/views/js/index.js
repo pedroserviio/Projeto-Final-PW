@@ -23,6 +23,18 @@ if (successMessage) {
 }
 
 document.addEventListener('DOMContentLoaded', function () {
+    let isUserLoggedIn = false;
+
+    // Verifica se o usuário está logado
+    fetch('/usuario/dados_usuario_sessao')
+    .then(response => response.json())
+    .then(data => {
+        if (data && !data.error) {
+            isUserLoggedIn = true;
+        }
+    })
+    .catch(error => console.error('Erro ao verificar sessão do usuário:', error));
+
     fetch('/listar_produtos')
         .then(response => response.json())
         .then(data => {
@@ -55,6 +67,8 @@ document.addEventListener('DOMContentLoaded', function () {
                 link.href = '#';
                 link.classList.add('btn', 'btn-outline-dark');
                 link.textContent = 'Adicionar ao carrinho';
+                link.setAttribute('data-id', produto._id);
+                link.addEventListener('click', (event) => adicionarAoCarrinho(event, isUserLoggedIn));
                 cardBody.appendChild(link);
 
                 card.appendChild(cardBody);
@@ -63,3 +77,39 @@ document.addEventListener('DOMContentLoaded', function () {
         })
         .catch(error => console.error('Erro ao carregar produtos:', error));
 });
+
+function adicionarAoCarrinho(event, isUserLoggedIn) {
+    event.preventDefault();
+
+    if (!isUserLoggedIn) {
+        alert('Você precisa estar logado para adicionar produtos ao carrinho.');
+        return;
+    }
+
+    const produtoId = event.target.getAttribute('data-id');
+    console.log(produtoId);
+
+    fetch('/carrinho/adicionar', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ produtoId, quantidade: 1 })
+    })
+    .then(response => response.json())
+    .then(data => {
+        showToast("Produto adicionado ao carrinho!", "#4CAF50");
+    })
+    .catch(error => {
+        console.error('Erro ao adicionar produto ao carrinho:', error);
+    });
+}
+
+function showToast(message, backgroundColor) {
+    Toastify({
+        text: message,
+        duration: 1000,
+        gravity: "top",
+        backgroundColor: backgroundColor,
+    }).showToast();
+}
